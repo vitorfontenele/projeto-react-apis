@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     fetchPokelist();
-  })
+  }, []);
 
   const fetchPokelist = async () => {
     try {
@@ -23,12 +23,18 @@ function App() {
     }
   }
 
-  const addToPokedex = () => {
+  const addToPokedex = (pokemon) => {
+    const verifier = pokedex.filter(pokedexItem => pokedexItem.name === pokemon.name);
 
+    if (verifier.length < 1){
+      setPokedex([...pokedex, pokemon]);
+    }
   }
 
-  const removeFromPokedex = () => {
+  const removeFromPokedex = (pokemon) => {
+    const newPokedex = pokedex.filter(pokedexItem => pokedexItem.name !== pokemon.name);
 
+    setPokedex(newPokedex);
   }
 
   const context = {
