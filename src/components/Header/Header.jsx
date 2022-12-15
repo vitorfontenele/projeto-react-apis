@@ -1,11 +1,20 @@
-import {HeaderContainer, Button, Logo, Link} from  "./styled";
-import { useLocation , useNavigate } from "react-router-dom";
-import { goToPokedexPage , goToHomePage } from "../../routes/coordinator";
+import {
+    HeaderContainer,
+    PokedexButton, 
+    Logo, 
+    Link, 
+    LinkContainer,
+    DeleteButton
+} from  "./styled";
+import { useLocation , useNavigate , useParams  } from "react-router-dom";
+import { goToPokedexPage , goToHomePage} from "../../routes/coordinator";
+import { Icon } from '@iconify/react';
 // import {PadContainer} from "../PadContainer/styled";
 
 const Header = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    const { name } = useParams();
 
     const renderHeader = () => {
         switch(location.pathname){
@@ -13,14 +22,28 @@ const Header = () => {
                 return (
                     <HeaderContainer>
                         <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
-                        <Button onClick={() => goToPokedexPage(navigate)}>Pokedéx</Button>
+                        <PokedexButton onClick={() => goToPokedexPage(navigate)}>Pokedéx</PokedexButton>
                     </HeaderContainer>
                 );
             case "/pokedex":
                 return (
                     <HeaderContainer>
-                        <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
+                        <LinkContainer>
+                            <Icon icon="eva:arrow-ios-back-outline" />
+                            <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
+                        </LinkContainer>
                         <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
+                    </HeaderContainer>
+                )
+            case `/details/${name}`:
+                return (
+                    <HeaderContainer>
+                        <LinkContainer>
+                            <Icon icon="eva:arrow-ios-back-outline" />
+                            <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
+                        </LinkContainer>
+                        <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
+                        <DeleteButton>Excluir</DeleteButton>
                     </HeaderContainer>
                 )
         }
@@ -28,10 +51,6 @@ const Header = () => {
 
     return (
         <>{renderHeader()}</>
-        // <HeaderContainer>
-        //     <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
-        //     <Button>Pokedéx</Button>
-        // </HeaderContainer>
     )
 }
 

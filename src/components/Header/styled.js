@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
     padding: 0 calc(40px + (100vw - 1440px)/2);
 `;
 
-export const Button = styled.button`
+export const PokedexButton = styled.button`
     background-color: #33A4F5;
     color: white;
     font-size: 24px;
@@ -33,10 +33,27 @@ export const Logo = styled.img`
 `
 
 export const Link = styled.a`
-    grid-column: 1 / 2;
     color: black;
     text-decoration: underline;
     font-weight: bold;
     font-size: 24px;
+    cursor: pointer;
+`
+
+export const LinkContainer = styled.div`
+    grid-column: 1 / 2;
+`
+
+export const DeleteButton = styled.button`
+    font-size: 16px;
+    color: white;
+    width: 226px;
+    height: 57px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 400;
+    background-color: #FF6262;
+    grid-column: 3 / 4;
+    justify-self: end;
     cursor: pointer;
 `
