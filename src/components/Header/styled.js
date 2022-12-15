@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
     background-color: white;
-    height: 160px;
+    grid-column: 1 / 4;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 160px;
     align-items: center;
-    padding: 0 calc((100vw - 1440px)/2);
+    padding: 0 calc(40px + (100vw - 1440px)/2);
 `;
 
 export const Button = styled.button`

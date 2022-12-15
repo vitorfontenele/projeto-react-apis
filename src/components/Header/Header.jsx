@@ -4,7 +4,7 @@ import {HeaderContainer, Button, Logo} from  "./styled";
 const Header = () => {
     return (
         <HeaderContainer>
-            <Logo src={"pokemon-logo.png"}/>
+            <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
             <Button>Pokedéx</Button>
         </HeaderContainer>
     )

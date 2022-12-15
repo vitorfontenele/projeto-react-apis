@@ -15,6 +15,9 @@ export const CardContainer = styled.article`
     min-height: 210px;
     border-radius: 12px;
     background-color: ${(props) => props.color};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
     color: white;
 `
@@ -49,7 +52,6 @@ export const PokemonType = styled.img`
 `;
 
 export const TypesContainer = styled.div`
-    margin-bottom: 27px;
 `;
 
 export const Pokeball = styled.img`

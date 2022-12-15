@@ -2,19 +2,21 @@ import Header from "../../components/Header/Header";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext, useEffect } from "react";
 import Card from "../../components/Card/Card";
+import {
+    HomePageContainer, 
+    PokelistSection,
+    HomeTitle
+} from "./styled";
 
 const HomePage = () => {
     const context = useContext(GlobalContext);
     const {pokelist, pokedex, addToPokedex} = context;
 
-    const firstLetterUpper = (str) => {       
-        return str ? str[0].toUpperCase() + str.slice(1) : "";
-    }
-
     return (
-        <>
+        <HomePageContainer>
             <Header />
-            <section>
+            <PokelistSection>
+                <HomeTitle>Todos Pokémons</HomeTitle>
                 {pokelist.map((pokemon, index) => {
                     return (
                         <Card 
@@ -25,8 +27,8 @@ const HomePage = () => {
                         />
                     )
                 })}
-            </section>
-        </>
+            </PokelistSection>
+        </HomePageContainer>
     )
 }
 
