@@ -1,4 +1,4 @@
-import {HeaderContainer, Button, Logo} from  "./styled";
+import {HeaderContainer, Button, Logo, Link} from  "./styled";
 import { useLocation , useNavigate } from "react-router-dom";
 import { goToPokedexPage , goToHomePage } from "../../routes/coordinator";
 // import {PadContainer} from "../PadContainer/styled";
@@ -19,8 +19,8 @@ const Header = () => {
             case "/pokedex":
                 return (
                     <HeaderContainer>
+                        <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
                         <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
-                        <Button onClick={() => goToHomePage(navigate)}>Página Principal</Button>
                     </HeaderContainer>
                 )
         }

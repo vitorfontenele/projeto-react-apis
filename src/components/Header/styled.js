@@ -11,9 +11,6 @@ export const HeaderContainer = styled.header`
 `;
 
 export const Button = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #33A4F5;
     color: white;
     font-size: 24px;
@@ -24,6 +21,7 @@ export const Button = styled.button`
     font-weight: bold;
     grid-column: 3 / 4;
     justify-self: end;
+    cursor: pointer;
 `;
 
 export const Logo = styled.img`
@@ -32,4 +30,13 @@ export const Logo = styled.img`
     justify-self: center;
     max-width: 100%;
     height: auto;
+`
+
+export const Link = styled.a`
+    grid-column: 1 / 2;
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
 `
