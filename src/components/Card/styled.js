@@ -67,12 +67,12 @@ export const DetailsLink = styled.a`
     cursor: pointer;
 `
 
-export const CaptureButton = styled.button`
+export const ActionButton = styled.button`
     width: 146px;
     height: 38px;
     font-weight: 400;
-    color: black;
-    background-color: white;
+    color: ${(props) => props.color};
+    background-color: ${(props) => props.bgColor};
     border: none;
     border-radius: 8px;
     cursor: pointer;

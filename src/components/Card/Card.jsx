@@ -10,7 +10,7 @@ import {
     TypesContainer, 
     PokemonType,
     Pokeball,
-    CaptureButton,
+    ActionButton,
     DetailsLink
 } from "./styled";
 import { getTypes } from "../../utils/ReturnPokemonType";
@@ -19,7 +19,7 @@ import pokeball from "../../assets/pngwing 2.png";
 import { useLocation } from "react-router-dom";
 
 const Card = (props) => {
-    const {pokemonUrl, addToPokedex, pokemonIndex} = props;
+    const {pokemonUrl, addToPokedex, removeFromPokedex, pokemonIndex} = props;
     const [pokemon, setPokemon] = useState({});
     const location = useLocation();
 
@@ -53,6 +53,25 @@ const Card = (props) => {
         return getColors(firstPokemonTypeName);
     }
 
+    const renderButton = () => {
+        switch (location.pathname){
+            case "/":
+                return (
+                    <ActionButton 
+                        color="black" 
+                        bgColor="white" 
+                        onClick={() => {addToPokedex(pokemon)}} >Capturar!</ActionButton>
+                )
+            case "/pokedex":
+                return (
+                    <ActionButton 
+                        color="white" 
+                        bgColor="#FF6262" 
+                        onClick={() => {removeFromPokedex(pokemon)}} >Excluir</ActionButton>
+                )
+        }
+    }
+
     return (
         <CardContainer color={cardColor()}>
             <FirstCardRow>
@@ -67,7 +86,7 @@ const Card = (props) => {
             </FirstCardRow>
             <SecondCardRow>
                 <DetailsLink>Detalhes</DetailsLink>
-                <CaptureButton onClick={() => {addToPokedex(pokemon)}} >Capturar!</CaptureButton>
+                {renderButton()}
             </SecondCardRow>
             <PokemonSprite src={pokemon.sprites?.other["official-artwork"]["front_default"]} />
             <Pokeball src={pokeball} />

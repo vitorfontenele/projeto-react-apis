@@ -11,7 +11,7 @@ import { BASE_URL } from "../../constants/url";
 
 const PokedexPage = () => {
     const context = useContext(GlobalContext);
-    const {pokedex} = context;
+    const {pokedex, removeFromPokedex} = context;
 
     return (
         <PokedexPageContainer>
@@ -24,6 +24,7 @@ const PokedexPage = () => {
                             key={pokemon.name}
                             pokemonIndex={index + 1}
                             pokemonUrl={`${BASE_URL}/${pokemon.name}`}
+                            removeFromPokedex={removeFromPokedex}
                         />
                     )
                 })}
