@@ -29,6 +29,7 @@ function App() {
     if (verifier.length < 1){
       setPokedex([...pokedex, pokemon]);
     }
+    console.log(pokedex);
   }
 
   const removeFromPokedex = (pokemon) => {

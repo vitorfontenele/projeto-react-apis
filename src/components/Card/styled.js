@@ -76,4 +76,6 @@ export const CaptureButton = styled.button`
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    position: relative;
+    z-index: 3;
 `

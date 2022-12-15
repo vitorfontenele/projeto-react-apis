@@ -16,10 +16,12 @@ import {
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
 import pokeball from "../../assets/pngwing 2.png";
+import { useLocation } from "react-router-dom";
 
 const Card = (props) => {
     const {pokemonUrl, addToPokedex, pokemonIndex} = props;
     const [pokemon, setPokemon] = useState({});
+    const location = useLocation();
 
     useEffect(() => {
         fetchPokemon();
@@ -65,7 +67,7 @@ const Card = (props) => {
             </FirstCardRow>
             <SecondCardRow>
                 <DetailsLink>Detalhes</DetailsLink>
-                <CaptureButton>Capturar!</CaptureButton>
+                <CaptureButton onClick={() => {addToPokedex(pokemon)}} >Capturar!</CaptureButton>
             </SecondCardRow>
             <PokemonSprite src={pokemon.sprites?.other["official-artwork"]["front_default"]} />
             <Pokeball src={pokeball} />
