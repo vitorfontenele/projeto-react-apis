@@ -8,6 +8,7 @@ export const DetailsPageContainer = styled.div`
 export const DetailsSection = styled.section`
     grid-column: 2 / 3;
     padding: 0 40px;
+    min-height: 100vh;
 `
 
 export const DetailsBox = styled.div`
@@ -19,6 +20,7 @@ export const DetailsBox = styled.div`
     grid-template-columns: auto auto 1fr;
     grid-column-gap: 32px;
     padding: 35px 42px;
+    position: relative;
 `
 
 export const DetailsTitle = styled.h1`
@@ -105,3 +107,86 @@ export const StatBar = styled.div`
     margin-left: 10px;
 `
 
+export const InformationContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 32px;
+`
+
+export const BasicInfo = styled.div`
+    color: white;
+`
+
+export const PokemonIndex = styled.p`
+    line-height: 19.36px;
+    font-family: 'Inter', sans-serif; 
+    font-size: 16;
+    font-weight: bold;
+    margin-bottom: -4px;
+`
+
+export const PokemonName = styled.h1`
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif; 
+    margin-bottom: 10px;
+`
+
+export const TypesContainer = styled.div`
+
+`
+
+export const PokemonType = styled.img`
+    max-width: 100px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px dashed #ffffff;
+    margin-right: 16px;
+`;
+
+export const MovesContainer = styled.div`
+    width: 292px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 18px;
+    height: 453px;
+`
+
+export const MovesTitle = styled.h1`
+    font-family: 'Inter', sans-serif;
+    font-family: 24px;  
+    color: black;  
+    font-weight: 800;
+    margin-bottom: 24px;
+`
+
+export const MovesBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    overflow: auto;
+    height: 80%;
+`
+
+export const Move = styled.div`
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    font-size: 14px;
+    color: black;
+    border: 1px dashed rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    width: fit-content;
+`
+
+export const ArtworkImage = styled.img`
+    height: 270px;
+    width: 270px;
+    position: absolute;
+    right: 0;
+    top: -90px;
+    right: 40px;
+`
