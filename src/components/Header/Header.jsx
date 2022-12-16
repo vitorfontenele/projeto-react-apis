@@ -42,6 +42,7 @@ const Header = () => {
                                 <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
                             </LinkContainer>
                             <Logo src={pokemonLogo} alt="Pokemón Logo"/>
+                            <PokedexButton onClick={() => goToPokedexPage(navigate)}>Pokedéx</PokedexButton>
                         </HeaderContent>
                     </HeaderContainer>
                 )

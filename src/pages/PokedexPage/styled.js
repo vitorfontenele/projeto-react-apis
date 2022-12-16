@@ -10,6 +10,7 @@ export const PokedexSection = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 50px;
+    grid-column-gap: 20px;
     padding: 0px 40px;
 `
 
