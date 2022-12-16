@@ -21,3 +21,19 @@ export const DetailsTitle = styled.h1`
     color: white;
     grid-column: 1 / 4;
 `
+
+export const SpriteBox = styled.div`
+    background-color: white;
+    width: 282px;
+    height: 282px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const SpriteImgDefault = styled.img`
+
+`
+
+

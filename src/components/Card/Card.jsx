@@ -16,12 +16,14 @@ import {
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
 import pokeball from "../../assets/pngwing 2.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { goToPokemonDetails } from "../../routes/coordinator";
 
 const Card = (props) => {
     const {pokemonUrl, addToPokedex, removeFromPokedex, pokemonIndex} = props;
     const [pokemon, setPokemon] = useState({});
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchPokemon();
@@ -85,7 +87,7 @@ const Card = (props) => {
                 </TypesContainer>
             </FirstCardRow>
             <SecondCardRow>
-                <DetailsLink>Detalhes</DetailsLink>
+                <DetailsLink onClick={() => {goToPokemonDetails(navigate, pokemon.name)}}>Detalhes</DetailsLink>
                 {renderButton()}
             </SecondCardRow>
             <PokemonSprite src={pokemon.sprites?.other["official-artwork"]["front_default"]} />
