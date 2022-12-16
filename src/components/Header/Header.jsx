@@ -1,5 +1,6 @@
 import {
     HeaderContainer,
+    HeaderContent,
     PokedexButton, 
     Logo, 
     Link, 
@@ -26,29 +27,35 @@ const Header = () => {
             case "/":
                 return (
                     <HeaderContainer>
-                        <Logo src={pokemonLogo} alt="Pokemón Logo"/>
-                        <PokedexButton onClick={() => goToPokedexPage(navigate)}>Pokedéx</PokedexButton>
+                        <HeaderContent>
+                            <Logo src={pokemonLogo} alt="Pokemón Logo"/>
+                            <PokedexButton onClick={() => goToPokedexPage(navigate)}>Pokedéx</PokedexButton>
+                        </HeaderContent>
                     </HeaderContainer>
                 );
             case "/pokedex":
                 return (
                     <HeaderContainer>
-                        <LinkContainer>
-                            <Icon icon="eva:arrow-ios-back-outline" />
-                            <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
-                        </LinkContainer>
-                        <Logo src={pokemonLogo} alt="Pokemón Logo"/>
+                        <HeaderContent>
+                            <LinkContainer>
+                                <Icon icon="eva:arrow-ios-back-outline" />
+                                <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
+                            </LinkContainer>
+                            <Logo src={pokemonLogo} alt="Pokemón Logo"/>
+                        </HeaderContent>
                     </HeaderContainer>
                 )
             case `/details/${name}`:
                 return (
                     <HeaderContainer>
-                        <LinkContainer>
-                            <Icon icon="eva:arrow-ios-back-outline" />
-                            <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
-                        </LinkContainer>
-                        <Logo src={pokemonLogo} alt="Pokemón Logo"/>
-                        <DeleteButton onClick={() => {removeFromPokedex(detailedPokemon)}}>Excluir da Pokédex</DeleteButton>
+                        <HeaderContent>
+                            <LinkContainer>
+                                <Icon icon="eva:arrow-ios-back-outline" />
+                                <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
+                            </LinkContainer>
+                            <Logo src={pokemonLogo} alt="Pokemón Logo"/>
+                            <DeleteButton onClick={() => {removeFromPokedex(detailedPokemon)}}>Excluir da Pokédex</DeleteButton>
+                        </HeaderContent>
                     </HeaderContainer>
                 )
         }

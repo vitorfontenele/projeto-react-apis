@@ -1,13 +1,19 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
-    background-color: white;
     grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: 1fr 1440px 1fr;
+    background-color: white;
+`
+
+export const HeaderContent = styled.div`
+    grid-column: 2 / 3;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 160px;
     align-items: center;
-    padding: 0 calc(40px + (100vw - 1440px)/2);
+    padding: 0 40px;
 `;
 
 export const PokedexButton = styled.button`
