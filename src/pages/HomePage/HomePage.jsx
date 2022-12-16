@@ -26,11 +26,10 @@ const HomePage = () => {
             <Header />
             <PokelistSection>
                 <HomeTitle>Todos Pokémons</HomeTitle>
-                {filteredPokelist().map((pokemon, index) => {
+                {filteredPokelist().map((pokemon) => {
                     return (
                         <Card 
                             key={pokemon.name}
-                            pokemonIndex={index + 1}
                             pokemonUrl={pokemon.url}
                             addToPokedex={addToPokedex}
                         />

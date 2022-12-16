@@ -91,6 +91,9 @@ const DetailsPage = () => {
         }
     }
     //console.log(detailedPokemon?.moves);
+    const configNumber = (index) => {
+        return index < 10 ? `0${index}` : `${index}`;
+    }
 
     return (
         <DetailsPageContainer>
@@ -124,7 +127,7 @@ const DetailsPage = () => {
                     </TestBox>
                     <InformationContainer>
                         <BasicInfo>
-                            <PokemonIndex>{"#01"}</PokemonIndex>
+                            <PokemonIndex>{`#${configNumber(detailedPokemon?.id)}`}</PokemonIndex>
                             <PokemonName>{firstLetterUpper(detailedPokemon?.name)}</PokemonName>
                             <TypesContainer>
                                 {detailedPokemon?.types?.map((pokemonType, index) => {

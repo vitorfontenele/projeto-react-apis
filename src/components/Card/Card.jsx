@@ -20,7 +20,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { goToPokemonDetails } from "../../routes/coordinator";
 
 const Card = (props) => {
-    const {pokemonUrl, addToPokedex, removeFromPokedex, pokemonIndex} = props;
+    const {pokemonUrl, addToPokedex, removeFromPokedex} = props;
     const [pokemon, setPokemon] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
@@ -73,11 +73,11 @@ const Card = (props) => {
                 )
         }
     }
-
+    console.log(pokemon);
     return (
         <CardContainer color={cardColor()}>
             <FirstCardRow>
-                <PokemonNumber>{`#${configNumber(pokemonIndex)}`}</PokemonNumber>
+                <PokemonNumber>{`#${configNumber(pokemon.id)}`}</PokemonNumber>
                 <PokemonName>{firstLetterUpper(pokemon.name)}</PokemonName>
                 <TypesContainer>
                     {pokemon.types?.map((pokemonType, index) => {

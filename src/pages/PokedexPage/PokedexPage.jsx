@@ -18,11 +18,10 @@ const PokedexPage = () => {
             <Header />
             <PokedexSection>
                 <PokedexTitle>Meus Pokemóns</PokedexTitle>
-                {pokedex.map((pokemon, index) => {
+                {pokedex.map((pokemon) => {
                     return (
                         <Card 
                             key={pokemon.name}
-                            pokemonIndex={index + 1}
                             pokemonUrl={`${BASE_URL}/${pokemon.name}`}
                             removeFromPokedex={removeFromPokedex}
                         />
