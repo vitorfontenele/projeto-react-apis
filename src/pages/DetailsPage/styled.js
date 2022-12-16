@@ -7,10 +7,18 @@ export const DetailsPageContainer = styled.div`
 
 export const DetailsSection = styled.section`
     grid-column: 2 / 3;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: 50px;
     padding: 0 40px;
+`
+
+export const DetailsBox = styled.div`
+    background-color: ${(props) => props.bgColor};
+    width: 100%;
+    height: 660px;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-column-gap: 32px;
+    padding: 35px 42px;
 `
 
 export const DetailsTitle = styled.h1`
@@ -18,8 +26,15 @@ export const DetailsTitle = styled.h1`
     font-weight: 700;
     line-height: 72px;
     margin-top: 60px;
+    margin-bottom: 16px;
     color: white;
     grid-column: 1 / 4;
+`
+
+export const SpriteBoxesContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 `
 
 export const SpriteBox = styled.div`
@@ -33,11 +48,11 @@ export const SpriteBox = styled.div`
 `
 
 export const SpriteImgDefault = styled.img`
-
+    height: 300px;
+    width: 300px;
 `
 
 export const TestBox = styled.div`
-    grid-column: 1 / 4;
     width: 343px;
     background-color: white;
     padding: 24px 12px 24px 28px;
