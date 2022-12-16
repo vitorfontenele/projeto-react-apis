@@ -14,7 +14,7 @@ export const DetailsSection = styled.section`
 export const DetailsBox = styled.div`
     background-color: ${(props) => props.bgColor};
     width: 100%;
-    height: 660px;
+    height: 663px;
     border-radius: 50px;
     display: grid;
     grid-template-columns: auto auto 1fr;
@@ -59,6 +59,8 @@ export const TestBox = styled.div`
     background-color: white;
     padding: 24px 12px 24px 28px;
     border-radius: 12px;
+    position: relative;
+    z-index: 1;
 `
 
 export const StatsTitle = styled.h1`
@@ -112,6 +114,8 @@ export const InformationContainer = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding-left: 32px;
+    position: relative;
+    z-index: 1;
 `
 
 export const BasicInfo = styled.div`
@@ -189,4 +193,11 @@ export const ArtworkImage = styled.img`
     right: 0;
     top: -90px;
     right: 40px;
+    z-index: 1;
+`
+
+export const Pokeball = styled.img`
+    position: absolute;
+    right: 0;
+    z-index: 0;
 `

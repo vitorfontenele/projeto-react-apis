@@ -27,7 +27,8 @@ import {
     MovesTitle,
     MovesBox,
     Move,
-    ArtworkImage
+    ArtworkImage,
+    Pokeball
 } from "./styled";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -35,12 +36,13 @@ import { getStatName } from "../../utils/ReturnStatName";
 import { getStatColor } from "../../utils/ReturnStatColor";
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
+import pokeball from "../../assets/pngwing 3.png";
 
 const DetailsPage = () => {
     const { name } = useParams();
     const context = useContext(GlobalContext);
-    const { pokelist } = context;
-    const [detailedPokemon, setDetailedPokemon] = useState({});
+    const { pokelist , detailedPokemon, setDetailedPokemon } = context;
+    //const [detailedPokemon, setDetailedPokemon] = useState({});
 
     const pokemonToBeDetailed = pokelist.find(pokemon => pokemon["name"] === name);
 
@@ -96,10 +98,10 @@ const DetailsPage = () => {
                 <DetailsBox bgColor={bgColor()}>
                     <SpriteBoxesContainer>
                         <SpriteBox>
-                            <SpriteImgDefault src={sprites?.back_default} />
+                            <SpriteImgDefault src={sprites?.front_default} />
                         </SpriteBox>
                         <SpriteBox>
-                            <SpriteImgDefault src={sprites?.front_default} />
+                            <SpriteImgDefault src={sprites?.back_default} />
                         </SpriteBox>
                     </SpriteBoxesContainer>
                     <TestBox>
@@ -140,6 +142,7 @@ const DetailsPage = () => {
                         </MovesContainer>
                     </InformationContainer>
                     <ArtworkImage src={sprites?.other["official-artwork"]["front_default"]} alt=""/>
+                    <Pokeball src={pokeball} alt="Pokeball"/>
                 </DetailsBox>
             </DetailsSection>
         </DetailsPageContainer>

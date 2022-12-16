@@ -9,6 +9,7 @@ import {
 import { useLocation , useNavigate , useParams  } from "react-router-dom";
 import { goToPokedexPage , goToHomePage} from "../../routes/coordinator";
 import { Icon } from '@iconify/react';
+import pokemonLogo from "../../assets/pokemon-logo.png";
 // import {PadContainer} from "../PadContainer/styled";
 
 const Header = () => {
@@ -21,7 +22,7 @@ const Header = () => {
             case "/":
                 return (
                     <HeaderContainer>
-                        <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
+                        <Logo src={pokemonLogo} alt="Pokemón Logo"/>
                         <PokedexButton onClick={() => goToPokedexPage(navigate)}>Pokedéx</PokedexButton>
                     </HeaderContainer>
                 );
@@ -32,7 +33,7 @@ const Header = () => {
                             <Icon icon="eva:arrow-ios-back-outline" />
                             <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
                         </LinkContainer>
-                        <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
+                        <Logo src={pokemonLogo} alt="Pokemón Logo"/>
                     </HeaderContainer>
                 )
             case `/details/${name}`:
@@ -42,8 +43,8 @@ const Header = () => {
                             <Icon icon="eva:arrow-ios-back-outline" />
                             <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
                         </LinkContainer>
-                        <Logo src={"pokemon-logo.png"} alt="Pokemón Logo"/>
-                        <DeleteButton>Excluir</DeleteButton>
+                        <Logo src={pokemonLogo} alt="Pokemón Logo"/>
+                        <DeleteButton>Excluir da Pokédex</DeleteButton>
                     </HeaderContainer>
                 )
         }

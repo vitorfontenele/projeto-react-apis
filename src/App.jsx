@@ -8,6 +8,7 @@ import './App.css'
 function App() {
   const [pokelist, setPokelist] = useState([]);
   const [pokedex, setPokedex] = useState([]);
+  const [detailedPokemon, setDetailedPokemon] = useState({});
 
   useEffect(() => {
     fetchPokelist();
@@ -42,7 +43,9 @@ function App() {
     pokelist,
     addToPokedex,
     pokedex,
-    removeFromPokedex
+    removeFromPokedex,
+    detailedPokemon,
+    setDetailedPokemon
   }
 
   return (
