@@ -28,7 +28,8 @@ import {
     MovesBox,
     Move,
     ArtworkImage,
-    Pokeball
+    Pokeball,
+    BigPokeball
 } from "./styled";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -37,6 +38,7 @@ import { getStatColor } from "../../utils/ReturnStatColor";
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
 import pokeball from "../../assets/pngwing 3.png";
+import bigPokeball from "../../assets/pngwing 1.png";
 
 const DetailsPage = () => {
     const { name } = useParams();
@@ -144,6 +146,7 @@ const DetailsPage = () => {
                     <ArtworkImage src={sprites?.other["official-artwork"]["front_default"]} alt=""/>
                     <Pokeball src={pokeball} alt="Pokeball"/>
                 </DetailsBox>
+                <BigPokeball src={bigPokeball} alt="Big Pokeball" />
             </DetailsSection>
         </DetailsPageContainer>
     )

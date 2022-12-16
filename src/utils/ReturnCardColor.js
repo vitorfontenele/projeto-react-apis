@@ -1,7 +1,7 @@
 export const getColors = (type) => {
   switch (type) {
     case "Bug":
-      return "#316520";
+      return "#76A866";
     case "Dark":
       return "#5C5365";
     case "Dragon":
@@ -13,19 +13,19 @@ export const getColors = (type) => {
     case "Fighting":
       return "#CE4069";
     case "Fire":
-      return "#F44900";
+      return "#EAAB7D";
     case "Flying":
       return "#6892B0";
     case "Ghost":
       return "#5269AC";
     case "Grass":
-      return "#70B873";
+      return "#729F92";
     case "Ground":
       return "#D97745";
     case "Ice":
       return "#74CEC0";
     case "Normal":
-      return "#8A8A8A";
+      return "#BF9762";
     case "Poison":
       return "#AD61AE";
     case "Psychic":
@@ -35,7 +35,7 @@ export const getColors = (type) => {
     case "Steel":
       return "#BBBBBB";
     case "Water":
-      return "#33A4F5";
+      return "#71C3FF";
     default:
       return "#8A8A8A";
   }

@@ -201,3 +201,14 @@ export const Pokeball = styled.img`
     right: 0;
     z-index: 0;
 `
+
+export const BigPokeball = styled.img`
+    position: absolute;
+    top: 155px;
+    z-index: -1;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+`
