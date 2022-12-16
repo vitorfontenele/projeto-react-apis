@@ -6,10 +6,20 @@ import {
     DetailsSection,
     DetailsTitle,
     SpriteBox,
-    SpriteImgDefault
+    SpriteImgDefault,
+    TestBox,
+    StatsTitle,
+    StatsRow,
+    StatsData,
+    StatName,
+    StatStat,
+    StatBarContainer,
+    StatBar
 } from "./styled";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { getStatName } from "../../utils/ReturnStatName";
+import { getStatColor } from "../../utils/ReturnStatColor";
 
 const DetailsPage = () => {
     const { name } = useParams();
@@ -34,6 +44,14 @@ const DetailsPage = () => {
     }
     const { sprites } = detailedPokemon ? detailedPokemon : {};
     const stats = detailedPokemon?.stats ? detailedPokemon.stats : [];
+    
+    let maxStat = 0;
+    for (let i = 0; i < stats.length; i++){
+        if (stats[i].base_stat > maxStat){
+            maxStat = stats[i].base_stat;
+        }
+    }
+    console.log(maxStat);
 
     return (
         <DetailsPageContainer>
@@ -47,11 +65,22 @@ const DetailsPage = () => {
                     <SpriteImgDefault src={sprites?.front_default} />
                 </SpriteBox>
                 <img src={sprites?.other["official-artwork"]["front_default"]} />
-                {stats.map((stat, index) => {
-                    return (
-                        <p key={index}>Texto</p>
-                    )
-                })}
+                <TestBox>
+                    <StatsTitle>Base stats</StatsTitle>
+                    {stats.map((stat, index) => {
+                        return (
+                            <StatsData>
+                                <StatName>{getStatName(stat.stat.name)}</StatName>
+                                <StatStat>{stat.base_stat}</StatStat>
+                                <StatBar color={getStatColor(stat.base_stat)} width={0.75*100*stat.base_stat/maxStat}></StatBar>
+                            </StatsData>
+                        )   
+                    })}
+                    <StatsData bottom={true}>
+                        <StatName>Total</StatName>
+                        <StatStat weight={700}>{stats.reduce((previous, current) => previous + current.base_stat, 0)}</StatStat>
+                    </StatsData>
+                </TestBox>
             </DetailsSection>
         </DetailsPageContainer>
     )
