@@ -8,10 +8,11 @@ import {
     PokedexTitle
 } from "./styled";
 import { BASE_URL } from "../../constants/url";
+import Modal from "../../components/Modal/Modal";
 
 const PokedexPage = () => {
     const context = useContext(GlobalContext);
-    const {pokedex, removeFromPokedex} = context;
+    const {pokedex, removeFromPokedex, showModal} = context;
 
     return (
         <PokedexPageContainer>
@@ -28,6 +29,7 @@ const PokedexPage = () => {
                     )
                 })}
             </PokedexSection>
+            {showModal && <Modal />}
         </PokedexPageContainer>
     )
 }

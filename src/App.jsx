@@ -9,6 +9,8 @@ function App() {
   const [pokelist, setPokelist] = useState([]);
   const [pokedex, setPokedex] = useState([]);
   const [detailedPokemon, setDetailedPokemon] = useState({});
+  const [showModal, setShowModal] = useState(false);
+  const [action, setAction] = useState("");
 
   useEffect(() => {
     fetchPokelist();
@@ -29,14 +31,23 @@ function App() {
 
     if (verifier.length < 1){
       setPokedex([...pokedex, pokemon]);
+      setAction("add");
+      setShowModal(previous => !previous);
     }
-    console.log(pokedex);
   }
 
   const removeFromPokedex = (pokemon) => {
-    const newPokedex = pokedex.filter(pokedexItem => pokedexItem.name !== pokemon.name);
+    const verifier = pokedex.filter(pokedexItem => pokedexItem.name === pokemon.name);
 
-    setPokedex(newPokedex);
+    if (verifier.length >= 1){
+      const newPokedex = pokedex.filter(pokedexItem => pokedexItem.name !== pokemon.name);
+      setAction("remove");
+      setShowModal(previous => !previous);
+      setPokedex(newPokedex);
+    } else {
+      setAction("failRemove");
+      setShowModal(previous => !previous);
+    }
   }
 
   const context = {
@@ -45,15 +56,16 @@ function App() {
     pokedex,
     removeFromPokedex,
     detailedPokemon,
-    setDetailedPokemon
+    setDetailedPokemon,
+    showModal, 
+    setShowModal,
+    action
   }
 
   return (
-    <>
       <GlobalContext.Provider value={context}>
-        <Router />
+          <Router />       
       </GlobalContext.Provider>
-    </>
   )
 }
 
