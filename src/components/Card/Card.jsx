@@ -15,7 +15,7 @@ import {
 } from "./styled";
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
-import pokeball from "../../assets/pngwing 2.png";
+import pokeball from "../../imgs/pngwing 2.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToPokemonDetails } from "../../routes/coordinator";
 

@@ -37,8 +37,8 @@ import { getStatName } from "../../utils/ReturnStatName";
 import { getStatColor } from "../../utils/ReturnStatColor";
 import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
-import pokeball from "../../assets/pngwing 3.png";
-import bigPokeball from "../../assets/pngwing 1.png";
+import pokeball from "../../imgs/pngwing 3.png";
+import bigPokeball from "../../imgs/pngwing 1.png";
 import Modal from "../../components/Modal/Modal";
 
 const DetailsPage = () => {
