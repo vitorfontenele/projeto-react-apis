@@ -1,5 +1,6 @@
 {
   "name": "projeto-react-apis",
+  "homepage": "/pokeapp",
   "private": true,
   "version": "0.0.0",
   "type": "module",
