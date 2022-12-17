@@ -73,7 +73,7 @@ const Card = (props) => {
                 )
         }
     }
-    console.log(pokemon);
+
     return (
         <CardContainer color={cardColor()}>
             <FirstCardRow>

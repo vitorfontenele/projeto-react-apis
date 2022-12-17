@@ -7,10 +7,11 @@ import {
     PokelistSection,
     HomeTitle
 } from "./styled";
+import Modal from "../../components/Modal/Modal";
 
 const HomePage = () => {
     const context = useContext(GlobalContext);
-    const {pokelist, pokedex, addToPokedex} = context;
+    const {pokelist, pokedex, addToPokedex, showModal} = context;
 
     // mostrar apenas pokemons que nao estao na pokedex
     const filteredPokelist = () =>
@@ -36,6 +37,7 @@ const HomePage = () => {
                     )
                 })}
             </PokelistSection>
+            {showModal && <Modal />}
         </HomePageContainer>
     )
 }

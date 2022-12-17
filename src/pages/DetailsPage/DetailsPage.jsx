@@ -39,12 +39,12 @@ import { getTypes } from "../../utils/ReturnPokemonType";
 import { getColors } from "../../utils/ReturnCardColor";
 import pokeball from "../../assets/pngwing 3.png";
 import bigPokeball from "../../assets/pngwing 1.png";
+import Modal from "../../components/Modal/Modal";
 
 const DetailsPage = () => {
     const { name } = useParams();
     const context = useContext(GlobalContext);
-    const { pokelist , detailedPokemon, setDetailedPokemon } = context;
-    //const [detailedPokemon, setDetailedPokemon] = useState({});
+    const { pokelist , detailedPokemon, setDetailedPokemon, showModal } = context;
 
     const pokemonToBeDetailed = pokelist.find(pokemon => pokemon["name"] === name);
 
@@ -151,6 +151,7 @@ const DetailsPage = () => {
                 </DetailsBox>
                 <BigPokeball src={bigPokeball} alt="Big Pokeball" />
             </DetailsSection>
+            {showModal && <Modal />}
         </DetailsPageContainer>
     )
 }
