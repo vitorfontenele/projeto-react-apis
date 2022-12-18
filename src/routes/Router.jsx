@@ -5,7 +5,7 @@ import PokedexPage from "../pages/PokedexPage/PokedexPage";
 
 const Router = () => {
     return (
-        <BrowserRouter basename="/pokeapp">
+        <BrowserRouter basename="/projeto-react-apis">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/pokedex" element={<PokedexPage />} />
