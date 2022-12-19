@@ -28,6 +28,11 @@ export const PokedexButton = styled.button`
     grid-column: 3 / 4;
     justify-self: end;
     cursor: pointer;
+    transition: ease all .5s;
+
+    :hover{
+        background-color: #065288;
+    }
 `;
 
 export const Logo = styled.img`
@@ -62,4 +67,9 @@ export const ActionButton = styled.button`
     grid-column: 3 / 4;
     justify-self: end;
     cursor: pointer;
+    transition: ease all .5s;
+
+    :hover{
+        background-color: ${(props) => props.hvColor};
+    }
 `

@@ -25,9 +25,9 @@ const Header = (props) => {
 
     const renderDetailsButton = () => {
         if (isDetailedOnPokedex){
-            return <ActionButton bgColor="#FF6262" onClick={() => {removeFromPokedex(detailedPokemon)}}>Excluir da Pokédex</ActionButton>;
+            return <ActionButton bgColor="#FF6262" hvColor="#9E0000" onClick={() => {removeFromPokedex(detailedPokemon)}}>Excluir da Pokédex</ActionButton>;
         } else {
-            return <ActionButton bgColor="#33A4F5" onClick={() => {addToPokedex(detailedPokemon)}}>Adicionar a Pokédex</ActionButton>
+            return <ActionButton bgColor="#33A4F5" hvColor="#065288" onClick={() => {addToPokedex(detailedPokemon)}}>Adicionar a Pokédex</ActionButton>
         }
     }
 
