@@ -18,10 +18,12 @@ import { getColors } from "../../utils/ReturnCardColor";
 import pokeball from "/pngwing 2.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToPokemonDetails } from "../../routes/coordinator";
+import LoadingCard from "../LoadingCard/LoadingCard";
 
 const Card = (props) => {
     const {pokemonUrl, addToPokedex, removeFromPokedex} = props;
     const [pokemon, setPokemon] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -34,6 +36,7 @@ const Card = (props) => {
             const response = await axios.get(pokemonUrl);
             setPokemon(response.data);
             //console.log(response.data);
+            setIsLoading(false);
         } catch(error){
             console.log("Erro ao pegar dados do Pokemon!");
             console.log(error)
@@ -75,8 +78,11 @@ const Card = (props) => {
     }
 
     return (
-        <CardContainer color={cardColor()}>
-            <FirstCardRow>
+        <>
+        {isLoading && <LoadingCard />}
+        {!isLoading && 
+        <CardContainer color={cardColor()}> 
+            <FirstCardRow> 
                 <PokemonNumber>{`#${configNumber(pokemon.id)}`}</PokemonNumber>
                 <PokemonName>{firstLetterUpper(pokemon.name)}</PokemonName>
                 <TypesContainer>
@@ -91,8 +97,9 @@ const Card = (props) => {
                 {renderButton()}
             </SecondCardRow>
             <PokemonSprite src={pokemon.sprites?.other["official-artwork"]["front_default"]} />
-            <Pokeball src={pokeball} />
-        </CardContainer>
+            <Pokeball src={pokeball} />                     
+        </CardContainer> }
+        </>
     )
 }
 

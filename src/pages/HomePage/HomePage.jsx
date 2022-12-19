@@ -13,21 +13,12 @@ const HomePage = () => {
     const context = useContext(GlobalContext);
     const {pokelist, pokedex, addToPokedex, showModal} = context;
 
-    // mostrar apenas pokemons que nao estao na pokedex
-    const filteredPokelist = () =>
-    pokelist.filter(
-      (pokemonInList) =>
-        !pokedex.find(
-          (pokemonInPokedex) => pokemonInList.name === pokemonInPokedex.name
-        )
-    );
-
     return (
         <HomePageContainer>
             <Header />
             <PokelistSection>
                 <HomeTitle>Todos Pokémons</HomeTitle>
-                {filteredPokelist().map((pokemon) => {
+                {pokelist.map((pokemon) => {
                     return (
                         <Card 
                             key={pokemon.name}

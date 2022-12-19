@@ -31,6 +31,7 @@ body.active-modal {
     border-radius: 12px;
     min-height: 220px;
     min-width: 450px;
+    transition: 0.5s all ease;
 }
 
 .modal-content > h2 {
