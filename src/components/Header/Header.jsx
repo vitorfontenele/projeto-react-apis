@@ -5,7 +5,7 @@ import {
     Logo, 
     Link, 
     LinkContainer,
-    DeleteButton
+    ActionButton
 } from  "./styled";
 import { useLocation , useNavigate , useParams  } from "react-router-dom";
 import { goToPokedexPage , goToHomePage} from "../../routes/coordinator";
@@ -15,12 +15,21 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
 // import {PadContainer} from "../PadContainer/styled";
 
-const Header = () => {
+const Header = (props) => {
     const location = useLocation();
     const navigate = useNavigate();
     const { name } = useParams();
     const context = useContext(GlobalContext);
-    const { removeFromPokedex , detailedPokemon } = context;
+    const { addToPokedex, removeFromPokedex , detailedPokemon } = context;
+    const { isDetailedOnPokedex } = props;
+
+    const renderDetailsButton = () => {
+        if (isDetailedOnPokedex){
+            return <ActionButton bgColor="#FF6262" onClick={() => {removeFromPokedex(detailedPokemon)}}>Excluir da Pokédex</ActionButton>;
+        } else {
+            return <ActionButton bgColor="#33A4F5" onClick={() => {addToPokedex(detailedPokemon)}}>Adicionar a Pokédex</ActionButton>
+        }
+    }
 
     const renderHeader = () => {
         switch(location.pathname){
@@ -42,7 +51,7 @@ const Header = () => {
                                 <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
                             </LinkContainer>
                             <Logo src={pokemonLogo} alt="Pokemón Logo"/>
-                            <PokedexButton onClick={() => goToPokedexPage(navigate)}>Pokedéx</PokedexButton>
+
                         </HeaderContent>
                     </HeaderContainer>
                 )
@@ -55,7 +64,7 @@ const Header = () => {
                                 <Link onClick={() => goToHomePage(navigate)}>Todos os Pokémons</Link>
                             </LinkContainer>
                             <Logo src={pokemonLogo} alt="Pokemón Logo"/>
-                            <DeleteButton onClick={() => {removeFromPokedex(detailedPokemon)}}>Excluir da Pokédex</DeleteButton>
+                            {renderDetailsButton()}
                         </HeaderContent>
                     </HeaderContainer>
                 )

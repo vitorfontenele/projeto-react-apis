@@ -6,11 +6,6 @@ function Modal() {
     const context = useContext(GlobalContext);
     const {setShowModal, action} = context;
   
-    // if(modal) {
-    //   document.body.classList.add('active-modal')
-    // } else {
-    //   document.body.classList.remove('active-modal')
-    // }
     const renderModalContent = () => {
         switch(action){
             case "add":
@@ -31,7 +26,14 @@ function Modal() {
                 return (
                     <>
                         <h2>Nada a fazer!</h2>
-                        <p>Esse Pokémon está na sua Pokédex?</p>
+                        <p>Esse Pokémon não está na sua Pokédex</p>
+                    </>
+                )
+            case "failAdd":
+                return (
+                    <>
+                        <h2>Nada a fazer!</h2>
+                        <p>Esse Pokémon já está na sua Pokédex</p>
                     </>
                 )
             default:

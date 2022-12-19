@@ -50,7 +50,7 @@ export const LinkContainer = styled.div`
     grid-column: 1 / 2;
 `
 
-export const DeleteButton = styled.button`
+export const ActionButton = styled.button`
     font-size: 16px;
     color: white;
     width: 226px;
@@ -58,7 +58,7 @@ export const DeleteButton = styled.button`
     border: none;
     border-radius: 8px;
     font-weight: 400;
-    background-color: #FF6262;
+    background-color: ${(props) => props.bgColor};
     grid-column: 3 / 4;
     justify-self: end;
     cursor: pointer;

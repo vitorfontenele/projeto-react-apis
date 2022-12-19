@@ -33,6 +33,9 @@ function App() {
       setPokedex([...pokedex, pokemon]);
       setAction("add");
       setShowModal(previous => !previous);
+    } else {
+      setAction("failAdd");
+      setShowModal(previous => !previous);
     }
   }
 

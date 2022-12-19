@@ -44,12 +44,12 @@ import Modal from "../../components/Modal/Modal";
 const DetailsPage = () => {
     const { name } = useParams();
     const context = useContext(GlobalContext);
-    const { pokelist , detailedPokemon, setDetailedPokemon, showModal } = context;
+    const { pokelist , detailedPokemon, setDetailedPokemon, showModal, pokedex } = context;
 
     const pokemonToBeDetailed = pokelist.find(pokemon => pokemon["name"] === name);
 
     useEffect(() => {
-        fetchDetailedPokemon();
+            fetchDetailedPokemon();
     }, [pokelist]);
 
     const fetchDetailedPokemon = async () => {
@@ -90,14 +90,17 @@ const DetailsPage = () => {
             maxStat = stats[i].base_stat;
         }
     }
-    //console.log(detailedPokemon?.moves);
+
     const configNumber = (index) => {
         return index < 10 ? `0${index}` : `${index}`;
     }
 
+    const verifier = pokedex.filter(pokemon => pokemon.name === detailedPokemon.name);
+    const isDetailedOnPokedex = verifier.length >= 1;
+
     return (
         <DetailsPageContainer>
-            <Header />
+            <Header isDetailedOnPokedex={isDetailedOnPokedex} />
             <DetailsSection>
                 <DetailsTitle>Detalhes</DetailsTitle>
                 <DetailsBox bgColor={bgColor()}>
