@@ -20,6 +20,12 @@ export const CardContainer = styled.article`
     justify-content: space-between;
     position: relative;
     color: white;
+    animation: fadeIn 1s; 
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
 `
 
 export const FirstCardRow = styled.div`
