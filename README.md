@@ -1,25 +1,80 @@
-# **Projeto React e API's**
-O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend.
+<a name="readme-top"></a>
 
-Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma Api pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
+<div align="center">
+  <a href="https://github.com/vitorfontenele/projeto-react-apis">
+    <img src="public/pokeball-colored.svg" alt="Logo" width="80" height="80">
+  </a>
+  <h3 align="center">projeto-react-apis</h3>
+  <a href="https://github.com/vitorfontenele/projeto-react-apis">https://github.com/vitorfontenele/projeto-react-apis</a>
+</div>
 
-Os conteúdos principais  a serem estudados são:
+<!-- Conteúdo -->
+<details>
+  <summary>Conteúdo</summary>
+  <ol>
+    <li>
+      <a href="#sobre-o-projeto">Sobre o projeto</a>
+      <ul>
+        <li><a href="#feito-com">Feito com</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#instalação">Instalação</a>
+    </li>
+    <li><a href="#requisitos">Requisitos</a></li>
+    <li><a href="#utilização">Utilização</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#licença">Licença</a></li>
+    <li><a href="#contato">Contato</a></li>
+    <li><a href="#contribuições">Contribuições</a></li>
+  </ol>
+</details>
+
+<!-- SOBRE O PROJETO -->
+## Sobre o projeto
+
+O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. Este projeto possui como fonte de dados para a sua criação a [Poke API](https://pokeapi.co/ "Poke Api"), uma API pública e muito conhecida.
+
+Este projeto é parte dos projetos realizados como atividade durante o bootcamp da Labenu.
+
+Os conteúdos principais trabalhados nesse projeto são:
 
 - Integração de APIs
 - React Router
-- Design Systems
 - Estado Global
 
-## **Enunciado**
-É objetivo deste projeto criar um site com três páginas usando a Poke Api com as seguintes ferramentas:
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
 
-- React
-- React Router
-- Styled-components
-- React Context
-- Axios
+### Feito com
 
-### **Requisitos**
+
+* [![React][React.js]][React-url]
+* [![Styled Components][styled-components]][styled-components-url]
+* [![React Router][react-router]][react-router-url]
+
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+
+<!-- INSTALAÇÃO -->
+## Instalação
+
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/vitorfontenele/eleicoes-brasil.git
+   ```
+2. Instale os pacotes NPM:
+   ```sh
+   npm install
+   ```
+3. Para executar o projeto em modo de desenvolvimento:
+   ```sh
+   npm run dev
+   ```
+   
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+
+<!-- REQUISITOS -->
+## Requisitos
+
 - **Gerais:**
 	- [ ] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
 	- [ ] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
@@ -39,30 +94,65 @@ Os conteúdos principais  a serem estudados são:
 	- [ ] Header deve ter um botão para adicionar ou remover da Pokedex e outro para voltar a página home.
 - [ ] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
 
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
 
-### Instruções de entrega
+<!-- UTILIZAÇÃO -->
+## Utilização
 
-- Faça o fork desse repositório e realize o clone da sua cópia `seu-nome-de-usuario/projeto-intro-web`.
-   <details>
-   <summary>Quer uma dica?</summary>
-   <img src="https://firebasestorage.googleapis.com/v0/b/assets-conteudo.appspot.com/o/gerais%2Ffork.png?alt=media&token=7030e997-246a-41fe-a75f-2a2ced61e54d" alt="Como adicionar o projeto no repositório"/>
-   </details>
-- Crie os arquivos do projeto dentro deste repo;
-- Execute o fluxo de entrega do git. **Lembre-se de abrir os PRs para seu próprio repositório.**
-- Para isso, você precisará fazer o projeto utilizando **branches**. Evite fazer as alterações direto na branch ```main```
-    <details>
-       <summary>Dúvidas sobre o Git & Github?</summary>
-       <p>Adiciomos um vídeo explicando o <strong>processo de entrega</strong> [do fork ao pull request] no Material Assincrono da Aula de <a href="https://estudante.labenu.com.br/conteudos/tecnico/mod1/Git%20e%20Github">Git e Github</a>. Esse vídeo também exemplifica situações que podem acontecer durante o fluxo de utilização do Git.</p>
-    </details>
-- Faça o deploy do projeto. Pode ser ultilizado o surge, Github pages ou outra ferramenta que faça a disponibilização do seu site para acesso público;
-				
-	dica para usar o surge:
-	* Instalar surge (só 1a vez): `npm install -g surge`
-	* Buildar app React: `npm run build`
-	* Corrigir a nomeação do arquivo (por causa do router)
-		 `cp ./build/index.html ./build/200.html`
-	* Deployar com surge: `surge ./build`
-- Adicionar o link do deploy no readme do seu projeto/repositório:
+Este projeto possui uma página Home com 20 pokémons, em que é possível adicionar esses pokémons a Pokédex (que também possui sua página própria). Na página da Pokédex, é possível excluir pokémons da Pokédex. Na página de Detalhes, é possível consultar os stats de um pokémon e adicionar ou excluir o pokémon da Pokédex.
 
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
 
-- Entregue o projeto no [Formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Reprodução do design do Figma com Styled Components
+- [x] Organização das rotas com React Router
+- [x] Integração com a PokeAPI
+- [x] Desenvolvimento do código em React
+- [x] Deploy do projeto no Github Pages
+
+Veja [open issues](https://github.com/vitorfontenele/projeto-react-apis/issues) para modificações propostas (e issues conhecidos).
+
+ <p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+
+<!-- LICENSE -->
+## Licença
+
+Distribuído sob a MIT License. Veja `LICENSE.txt` para mais informações.
+
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+ 
+ <!-- CONTATO -->
+ ## Contato
+
+[![Github][github-shield]][github-url][![Linkedin][linkedin-shield]][linkedin-url]
+
+Link do Projeto: [https://github.com/vitorfontenele/projeto-react-apis](https://github.com/vitorfontenele/projeto-react-apis)
+
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+
+ <!-- CONTRIBUIÇÕES -->
+ ## Contribuições
+
+* [Vite](https://vitejs.dev)
+* [Github Pages](https://pages.github.com/)
+* [Poke API](https://pokeapi.co/)
+* [Single Page Apps for GitHub Pages](https://github.com/rafgraph/spa-github-pages)
+* [CSS Loaders](https://cssloaders.github.io/)
+
+<p align="right">(<a href="#readme-top">voltar para o topo</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/vitor-fontenele/
+[github-shield]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[github-url]: https://github.com/vitorfontenele
+[styled-components]: https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white
+[styled-components-url]: https://styled-components.com/
+[react-router]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
+[react-router-url]: https://reactrouter.com/en/main
