@@ -5,7 +5,7 @@
     <img src="public/pokeball-colored.svg" alt="Logo" width="80" height="80">
   </a>
   <h3 align="center">projeto-react-apis</h3>
-  <a href="https://github.com/vitorfontenele/projeto-react-apis">https://github.com/vitorfontenele/projeto-react-apis</a>
+  <a href="https://vitorfontenele.github.io/projeto-react-apis/">https://vitorfontenele.github.io/projeto-react-apis/</a>
 </div>
 
 <!-- Conteúdo -->
