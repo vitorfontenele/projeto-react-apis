@@ -84,4 +84,9 @@ export const ActionButton = styled.button`
     cursor: pointer;
     position: relative;
     z-index: 3;
+    transition: .5s ease all;
+
+    :hover{
+        background-color: ${(props) => props.hvColor}
+    }
 `

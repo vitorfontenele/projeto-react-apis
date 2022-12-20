@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const PokedexPageContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1440px 1fr;
+    padding-bottom: 10vh;
 `
 
 export const PokedexSection = styled.section`

@@ -3,12 +3,12 @@ import styled from "styled-components"
 export const DetailsPageContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1440px 1fr; 
+    padding-bottom: 10vh;
 `
 
 export const DetailsSection = styled.section`
     grid-column: 2 / 3;
     padding: 0 40px;
-    min-height: 100vh;
 `
 
 export const DetailsBox = styled.div`

@@ -65,6 +65,7 @@ const Card = (props) => {
                     <ActionButton 
                         color="black" 
                         bgColor="white" 
+                        hvColor="#E3E3E3"
                         onClick={() => {addToPokedex(pokemon)}} >Capturar!</ActionButton>
                 )
             case "/pokedex":
@@ -72,6 +73,7 @@ const Card = (props) => {
                     <ActionButton 
                         color="white" 
                         bgColor="#FF6262" 
+                        hvColor="#9E0000"
                         onClick={() => {removeFromPokedex(pokemon)}} >Excluir</ActionButton>
                 )
         }
